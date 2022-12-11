@@ -12,7 +12,7 @@
         }
         .h2_font
         {
-            font-size: 51px;
+            font-size: 50px;
             padding-bottom: 50px;
 
         }

@@ -21,6 +21,15 @@
             color: #800080;
 
         }
+        .center
+        {
+          margin: auto;
+          width: 50%;
+          text-align: center;
+          margin-top: 30px;
+          border: 5px solid green;
+
+        }
     </style>
   </head>
   <body>
@@ -52,8 +61,8 @@
           <div class="content-wrapper">
             @if(session()->has('message'))
             <div class="alert alert-info">
-                
 
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >x</button>
                 {{session()->get('message')}}
 
                 
@@ -70,6 +79,21 @@
 
 
            </div>
+           <table class="center">
+            <tr>
+              <td>Category name</td>
+              <td>Action</td>
+            </tr>
+            @foreach($data as $data)
+            <tr>
+              <td>{{$data->category_name}}</td>
+              <td>
+                <a class="btn btn-info" href="{{url('delete_category',$data->id)}}">delete</a>
+              </td>
+            </tr>
+            @endforeach
+           </table>
+
           </div>
       </div>
         <!-- @include('admin.body') -->

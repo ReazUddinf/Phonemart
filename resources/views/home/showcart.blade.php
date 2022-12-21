@@ -83,7 +83,7 @@
             <tr>
                 <td>{{$cart->product_title}}</td>
                 <td>{{$cart->quantity}}</td>
-                <td>{{$cart->price}}</td>
+                <td>{{$cart->price}} Taka</td>
                 <td><img class="img_deg" src="/product/{{$cart->image}}"></td>
                 <td><a class="btn btn-outline-warning" href="{{url('remove_cart',$cart->id)}}">Remove</a></td>
             </tr>
@@ -94,7 +94,13 @@
 
         </table>
         <div>
-            <h1 class="total_deg">Total Price: {{$totalprice}}</h1>
+            <h1 class="total_deg">Total Price: {{$totalprice}} Taka</h1>
+        </div>
+        <div>
+            <h1 style="font-size: 25px; padding-bottom: 15px;">Proceed to order</h1>
+            <a href="{{url('cash_order')}}" class="btn btn-outline-danger" >Cash On Delivery</a>
+
+
         </div>
 
 

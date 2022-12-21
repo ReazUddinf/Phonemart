@@ -52,15 +52,16 @@
             <h1 class="title_deg">All Orders</h1>
             <table class="table_deg">
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Product title</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Payment Status</th>
-                    <th>Delivery Status</th>
+                    <th style="padding: 10px;">Name</th>
+                    <th style="padding: 10px;">Email</th>
+                    <th style="padding: 10px;">Address</th>
+                    <th style="padding: 10px;">Phone</th>
+                    <th style="padding: 10px;">Product title</th>
+                    <th style="padding: 10px;">Quantity</th>
+                    <th style="padding: 10px;">Price</th>
+                    <th style="padding: 10px;">Payment Status</th>
+                    <th style="padding: 10px;">Delivery Status</th>
+                    <th style="padding: 10px;">Deliver</th>
                 </tr>
                 @foreach($order as $order)
                 <tr>
@@ -73,6 +74,9 @@
                     <td>{{$order->price}}</td>
                     <td>{{$order->payment_status}}</td>
                     <td>{{$order->delivery_status}}</td>
+                    <td>
+                        <a href="{{url('delivered',$order->id)}}" class="btn btn-outline-success">Delivered</a>
+                    </td>
                 </tr>
                 @endforeach
 

@@ -98,4 +98,12 @@ class AdminController extends Controller
         $order= order::all();
         return view('admin.order',compact('order'));
     }
+    public function delivered($id)
+    {
+        $order=order::find($id);
+        $order->delivery_status="delivered";
+        $order->save();
+        return redirect()->back();
+
+    }
 }
